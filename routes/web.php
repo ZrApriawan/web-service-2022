@@ -2,6 +2,7 @@
 
 use App\http\Controllers\ProfilleController;
 use App\http\Controllers\MahasiswaController;
+use App\http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -54,4 +55,9 @@ Route::get('/profile', [ProfilleController::class, 'index']);
 Route::get('data-mahasiswa', [MahasiswaController::class, 'index']);
 // Route::get('data-mahasiswa', 'MahasiswaController@index');
 Route::get('add-mahasiswa', [MahasiswaController::class, 'create']);
+
+// route untuk blog
+Route::get('data-blog', [BlogController::class, 'index']);
+Route::get('add-blog', [BlogController::class, 'create']);
+Route::post('input-blog', [BlogController::class, 'input']);
 
