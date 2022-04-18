@@ -10,10 +10,7 @@
             <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{ url('data-mahasiswa') }} ">Mahasiswa</a>
-        </li>   
-        <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{ url('add-mahasiswa') }} ">Add Mahasiswa</a>
+            <a class="nav-link active" aria-current="page" href="{{ url('data-blog') }} ">Blog</a>
         </li>
         </ul>
         <form class="d-flex">

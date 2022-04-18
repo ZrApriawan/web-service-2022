@@ -28,7 +28,13 @@
                                 <td>{{$row->title}}</td>
                                 <td>{{$row->body}}</td>
                                 <td>{{$row->keyword}}</td>
-                                <td><a href="" class="btn btn-success">Update</a>|<a href="" class="btn btn-danger">Delete</a></td>
+                                <td>
+                                    <form action="{{route('delete-blog', $row->id)}}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('are you sure about that?')">Delete</button>
+                                    </form>
+                                </td>
                             </tr>
                         @endforeach
 

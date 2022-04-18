@@ -55,9 +55,13 @@ Route::get('/profile', [ProfilleController::class, 'index']);
 Route::get('data-mahasiswa', [MahasiswaController::class, 'index']);
 // Route::get('data-mahasiswa', 'MahasiswaController@index');
 Route::get('add-mahasiswa', [MahasiswaController::class, 'create']);
+Route::post('save-mahasiswa', [MahasiswaController::class, 'save']);
+Route::delete('delete-mahasiswa/{id}', [MahasiswaController::class, 'destroy'])->name('delete-mahasiswa');
 
 // route untuk blog
 Route::get('data-blog', [BlogController::class, 'index']);
 Route::get('add-blog', [BlogController::class, 'create']);
 Route::post('input-blog', [BlogController::class, 'input']);
+Route::delete('delete-blog/{id}', [BlogController::class, 'hapus'])->name('delete-blog');
+
 

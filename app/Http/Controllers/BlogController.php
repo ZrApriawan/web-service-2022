@@ -20,4 +20,9 @@ class BlogController extends Controller
         Blog::create($request->all());
         return redirect('data-blog');
     }
+
+    public function hapus(Blog $id){
+        $id -> delete();
+        return redirect('data-blog');
+    }
 }
