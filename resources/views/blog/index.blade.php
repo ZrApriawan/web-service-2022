@@ -34,6 +34,13 @@
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('are you sure about that?')">Delete</button>
                                     </form>
+                                    <a href="edit-blog/{{ $row -> id }}" class="btn btn-warning btn-sm">Edit</a>
+                                    {{-- <br>
+                                    <form action="{{route('edit-blog', $row->id)}}" method="post">
+                                        @csrf --}}
+                                        {{-- @method('DELETE') --}}
+                                        {{-- <button type="submit" class="btn btn-warning btn-sm">Update</button>
+                                    </form> --}}
                                 </td>
                             </tr>
                         @endforeach

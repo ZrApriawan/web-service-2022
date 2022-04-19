@@ -64,4 +64,7 @@ Route::get('add-blog', [BlogController::class, 'create']);
 Route::post('input-blog', [BlogController::class, 'input']);
 Route::delete('delete-blog/{id}', [BlogController::class, 'hapus'])->name('delete-blog');
 
+Route::get('edit-blog/{id}', [BlogController::class, 'rubah'])->name('edit-blog');
+Route::post('update-blog/{id}', [BlogController::class, 'barui'])->name('update-blog');
+
 

@@ -25,4 +25,17 @@ class BlogController extends Controller
         $id -> delete();
         return redirect('data-blog');
     }
+
+    public function rubah($id){
+        $data = Blog::find($id);
+        // dd($data);
+        return view('blog/tampilin', compact('data'));
+    }
+
+    public function barui(Request $request, $id){
+        $data = Blog::find($id);
+        $data->update($request->all());
+
+        return redirect('data-blog');
+    }
 }
