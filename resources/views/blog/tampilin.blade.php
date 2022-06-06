@@ -25,7 +25,7 @@
                         </div>
                         <div class="form-gorup col-6">
                             <label for="">Keyword</label>
-                            <textarea name="keyword" cols="30" rows="2" class="form-control" >{{ $data->body }}</textarea>
+                            <textarea name="keyword" cols="30" rows="2" class="form-control" >{{ $data->keyword }}</textarea>
                         </div>
 
                         <input type="submit" class="btn btn-success mt-3" name="submit" value="save" >

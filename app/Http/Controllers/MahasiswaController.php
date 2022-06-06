@@ -34,4 +34,20 @@ class MahasiswaController extends Controller
         $id -> delete();
         return redirect('data-mahasiswa');
     }
+
+    public function edit(Mahasiswa $id){
+        return view('mahasiswa.edit', compact('id'));
+    }
+
+    public function update(Request $request, Mahasiswa $id){
+        $this-> validate($request, [
+        'nim' => 'required|unique:mahasiswa,nim,' . $id->id,
+        'nama_mahasiswa' => 'required|min:5',
+        'umur' => 'required|numeric',
+        'smester' => 'required|numeric'
+    ]);
+
+        $id->update($request->all());
+        return redirect('data-mahasiswa');
+    }
 }

@@ -32,9 +32,10 @@
                                     <form action="{{route('delete-blog', $row->id)}}" method="post">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('are you sure about that?')">Delete</button>
+                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('are you sure about that?')">Delete</button> |
+                                        <a href="edit-blog/{{ $row -> id }}" class="btn btn-warning btn-sm">Edit</a>
                                     </form>
-                                    <a href="edit-blog/{{ $row -> id }}" class="btn btn-warning btn-sm">Edit</a>
+                                    
                                     {{-- <br>
                                     <form action="{{route('edit-blog', $row->id)}}" method="post">
                                         @csrf --}}

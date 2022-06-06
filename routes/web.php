@@ -54,9 +54,19 @@ Route::get('/profile', [ProfilleController::class, 'index']);
 // route untuk mahasiswa
 Route::get('data-mahasiswa', [MahasiswaController::class, 'index']);
 // Route::get('data-mahasiswa', 'MahasiswaController@index');
-Route::get('add-mahasiswa', [MahasiswaController::class, 'create']);
+Route::get('add-mahasiswa', [MahasiswaController::class, 'create'])->middleware('auth');
 Route::post('save-mahasiswa', [MahasiswaController::class, 'save']);
 Route::delete('delete-mahasiswa/{id}', [MahasiswaController::class, 'destroy'])->name('delete-mahasiswa');
+// route untuk ambil data
+Route::get('edit-mahasiswa/{id}', [MahasiswaController::class, 'edit'])->name('edit.mahasiswa');
+// route untuk update data
+Route::patch('update-mahasiswa/{id}', [MahasiswaController::class, 'update'])->name('update.mahasiswa');
+
+
+
+
+
+
 
 // route untuk blog
 Route::get('data-blog', [BlogController::class, 'index']);
@@ -68,3 +78,7 @@ Route::get('edit-blog/{id}', [BlogController::class, 'rubah'])->name('edit-blog'
 Route::post('update-blog/{id}', [BlogController::class, 'barui'])->name('update-blog');
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
