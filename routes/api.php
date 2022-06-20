@@ -20,12 +20,16 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::get('v1/customer', [CustomerController::class, 'index']);
 
-Route::post('v1/customer', [CustomerController::class, 'add']);
 
-Route::get('v1/customer/{id}', [CustomerController::class, 'show']);
+Route::group(['prefix'=> 'v1'], function() {
+    Route::get('customer', [CustomerController::class, 'index']);
 
-Route::patch('v1/customer/{id}', [CustomerController::class, 'update']);
+    Route::post('customer', [CustomerController::class, 'add']);
 
-Route::delete('v1/customer/{id}', [CustomerController::class, 'destroy']);
+    Route::get('customer/{id}', [CustomerController::class, 'show']);
+
+    Route::patch('customer/{id}', [CustomerController::class, 'update']);
+
+    Route::delete('customer/{id}', [CustomerController::class, 'destroy']);
+});
